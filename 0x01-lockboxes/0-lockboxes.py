@@ -1,18 +1,18 @@
 #!/usr/bin/python3
+"""
+Determine if all the boxes can be opened
+"""
+
 
 def canUnlockAll(boxes):
-    """ lockboxes app """
-    if len(boxes) == 0:
-        return False
-
-    iBox = [0]
-    for key in iBox:
-        for keyBox in boxes[key]:
-            if keyBox not in iBox:
-                if keyBox < len(boxes):
-                    iBox.append(keyBox)
-
-    if len(iBox) == len(boxes):
+    """ method that determines if all the boxes can be opened. """
+    n = len(boxes)
+    myList = [0]
+    for i in myList:
+        for j in boxes[i]:
+            if j not in myList:
+                if j < n:
+                    myList.append(j)
+    if len(myList) == n:
         return True
-
     return False
